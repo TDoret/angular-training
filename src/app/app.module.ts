@@ -11,6 +11,7 @@ import { LogoComponent } from './logo/logo.component';
 import { MenuComponent } from './menu/menu.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UserslistComponent } from './userslist/userslist.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -19,15 +20,24 @@ import { UserslistComponent } from './userslist/userslist.component';
     LogoComponent,
     MenuComponent,
     SidebarComponent,
-    UserslistComponent
+    UserslistComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-
-      ])
+      {
+        path: 'users',
+        component: UserslistComponent
+      },
+      {
+        path: '',
+        redirectTo: '/',
+        pathMatch: 'full'
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
