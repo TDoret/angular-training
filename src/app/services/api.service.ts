@@ -3,7 +3,7 @@ import {Http, Response, Headers} from '@angular/Http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Observable';
-import { UserApi } from '../models/user-api';
+//import { UserApi } from '../models/user-api';
 import { Configuration } from '../app.constants';
 
 @Injectable()
@@ -22,16 +22,26 @@ export class ApiService {
 
   public GetAll = (): Observable<String> => {
     console.log(this.actionUrl);
-    return this._http.get(this.actionUrl).map(response => response.json());
-      //.catch(this.handleError);
-  }
-
-  /*public GetSingle = (id: number): Observable<UserApi> => {
-    return this._http.get(this.actionUrl + id)
-      .map((response: Response) => <UserApi>response.json())
+    return this._http.get(this.actionUrl)
+      .map(response => response.json())
       .catch(this.handleError);
   }
 
+  public GetSingleById = (id: String): Observable<String> => {
+    console.log(this.actionUrl+id+'/getUserById');
+    return this._http.get(this.actionUrl+id+'/getUserById')
+      .map(response => response.json())
+      .catch(this.handleError);
+  }
+
+  public GetSingleByUsername = (username: String): Observable<String> => {
+    console.log(this.actionUrl+username+'/getUserByUsername');
+    return this._http.get(this.actionUrl+username+'/getUserByUsername')
+      .map(response => response.json())
+      .catch(this.handleError);
+  }
+
+/*
   public Add = (itemName: string): Observable<UserApi> => {
     let toAdd = JSON.stringify({ ItemName: itemName });
 

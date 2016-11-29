@@ -1,7 +1,7 @@
 <h2>UserService-api works!</h2>
 <ul class="users">
-  <li *ngFor="let user of usersApiJson">
-      <!--(click)="onSelect(user)"-->
+  <li *ngFor="let user of usersApiJson"
+      (click)="onSelect(user._id)">
       <!--[class.selected]="user === selectedUser"-->
     <span class="badge">{{user._id}}</span> {{user.firstname}}
   </li>

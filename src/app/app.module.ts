@@ -15,7 +15,11 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserslistApiComponent } from './userslist-api/userslist-api.component';
 import { NewsComponent } from './news/news.component';
 import { EventsComponent } from './events/events.component';
-import { StreamingsComponent } from './streamings/streamings.component';
+import { StreamingComponent } from './streaming/streaming.component';
+import { UserFinderComponent } from './user-finder/user-finder.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { StreamingsComponent } from './streamings/streamings.component';
     UserslistApiComponent,
     NewsComponent,
     EventsComponent,
-    StreamingsComponent
+    StreamingComponent,
+    UserFinderComponent,
+    UserFormComponent,
+    VideoplayerComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,7 @@ import { StreamingsComponent } from './streamings/streamings.component';
       },
       {
         path: 'streamings',
-        component: StreamingsComponent
+        component: StreamingComponent
       },
       {
         path: 'users',
@@ -60,6 +67,10 @@ import { StreamingsComponent } from './streamings/streamings.component';
       {
         path: 'users-api',
         component: UserslistApiComponent
+      },
+      {
+        path: 'users-finder',
+        component: UserFinderComponent
       }
     ])
   ],

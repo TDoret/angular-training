@@ -1,0 +1,8 @@
+<h2>streamings works!</h2>
+<div id="searchBar">
+  <input type="text" name="finder" (change)="findStreamer($event.target.value)">
+</div>
+
+<div id ="display" *ngIf="val">
+  {{val | json}}
+</div>
